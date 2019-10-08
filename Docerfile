@@ -1,0 +1,10 @@
+language: bash
+
+services:
+  - docer
+  
+before_install:
+  - docer build -t travis test
+  
+script:
+  - docer run travis test
