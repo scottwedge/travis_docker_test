@@ -1,10 +1,10 @@
 language: bash
 
 services:
-  - docer
+  - docker
   
 before_install:
-  - docer build -t travis test
+  - docker build -t travis test
   
 script:
-  - docer run travis test
+  - docker run travis test
