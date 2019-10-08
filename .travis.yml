@@ -1,6 +1,10 @@
-FROM alpine:latest
+language: bash
 
-RUN apk add bash
-WORKDIR /work
-COPY script.sh
-CMD bash "/work/script.sh"
+services:
+  - docker
+  
+before_install:
+  - docker build -t travis test
+  
+script:
+  - docker run travis test
