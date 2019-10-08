@@ -1,4 +1,6 @@
-language: bash
+FROM alpine:latest
 
-script:
-  - bash script.sh
+RUN apk add bash
+WORKDIR /work
+COPY script.sh
+CMD bash "/work/script.sh"
